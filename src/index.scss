@@ -1,6 +1,44 @@
-.redBg {
-    background-color: red;
-    border-radius: 5px;
-    color: white;
-    padding: 5px;
+html, body {
+  height: 100%;
+}
+
+.leaflet-container {
+  height: 400px;
+  width: 100%;
+}
+
+.map {
+  height: 100%;
+  width: 500px;
+}
+
+.container {
+  height: 600px;
+}
+
+.mapContainer {
+  height: 100%;
+}
+
+.maxHeight {
+  height: 100%;
+}
+
+.titleBar {
+  height: 5%;
+}
+
+.container {
+  height: 100%
+}
+
+.mainContainer {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.sideMenu {
+  padding: 0 4em 0 0;
+  background-color:'rgba(0,0,0,.3)';
 }

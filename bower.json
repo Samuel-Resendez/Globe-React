@@ -1,0 +1,13 @@
+{
+  "name": "react-webpack-babel",
+  "description": "React Webpack Babel Starter Kit",
+  "main": "''",
+  "authors": [
+    "Ali Al Dallal"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/alicoding/react-webpack-babel",
+  "dependencies": {
+    "arcgis-js-api": "https://github.com/Esri/arcgis-js-api.git#4master"
+  }
+}

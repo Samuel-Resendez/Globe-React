@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/4.2/esri/copyright.txt for details.
+//>>built
+define(["../core/lang","../core/kebabDictionary","../core/JSONSupport","../Color"],function(d,e,f,b){var c=e({esriSMS:"simple-marker-symbol",esriPMS:"picture-marker-symbol",esriSLS:"simple-line-symbol",esriSFS:"simple-fill-symbol",esriPFS:"picture-fill-symbol",esriTS:"text-symbol",esriSHD:"shield-label-symbol",PointSymbol3D:"point-symbol-3d",LineSymbol3D:"line-symbol-3d",PolygonSymbol3D:"polygon-symbol-3d",MeshSymbol3D:"mesh-symbol-3d",LabelSymbol3D:"label-symbol-3d"}),g=0;return f.createSubclass({declaredClass:"esri.symbols.Symbol",
+constructor:function(){this.id="sym"+g++},properties:{type:{type:String,value:null,json:{read:c.fromJSON,writeAlways:!0,write:function(a,b){b.type=c.toJSON(this.type)}}},color:{type:b,value:new b([0,0,0,1]),json:{read:function(a){return a&&d.isDefined(a[0])?[a[0],a[1],a[2],a[3]/255]:a},writable:!0}}}})});

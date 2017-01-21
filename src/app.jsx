@@ -1,14 +1,20 @@
 import styles from './index.scss';
 import React from 'react';
+import MapComponent from './MapComponent.jsx';
+import TitleBar from './TitleBar.jsx';
+import SideMenu from './SideMenu.jsx';
 
 export default class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>It Works!</h1>
-        <p>This React project just works including <span className={styles.redBg}>module</span> local styles.</p>
-        <p>Enjoy!</p>
-      </div>
-    )
-  }
+	render() {
+		return (
+			<div className={styles.maxHeight}>
+				<TitleBar title="These are some maps"></TitleBar>
+        <div className={styles.mainContainer}>
+          <SideMenu className={styles.sideMenu}> </SideMenu>
+          <MapComponent className={styles.maxHeight}></MapComponent>
+        </div>
+				<TitleBar title="Alexa Crap"></TitleBar>
+			</div>
+		)
+	}
 }
