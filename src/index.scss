@@ -1,7 +1,7 @@
 html, body {
   height: 100%;
   background-color: #303030;
-  background-image: url('./4297.jpg');
+  margin: 0 0 0 0
 }
 
 h3 {
@@ -20,7 +20,6 @@ h3 {
   margin-left: 0em;
   margin-right: 0em;
   margin-bottom: 2em;
-  max-width: 1700px;
 }
 
 .container {
@@ -48,5 +47,10 @@ h3 {
   height: 10%;
   padding: 2em 4em 0.5em 2em;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
 }
