@@ -1,15 +1,26 @@
 html, body {
   height: 100%;
+  background-color: #303030;
+  background-image: url('./4297.jpg');
 }
+
+h3 {
+  color: #fff;
+  font-size: 1.5em;
+  text-align: center;
+}
+
 
 .leaflet-container {
-  height: 400px;
-  width: 100%;
+  height: 100%;
 }
-
 .map {
   height: 100%;
-  width: 500px;
+  width: auto;
+  margin-left: 0em;
+  margin-right: 0em;
+  margin-bottom: 2em;
+  max-width: 1700px;
 }
 
 .container {
@@ -17,28 +28,25 @@ html, body {
 }
 
 .mapContainer {
-  height: 100%;
+  height: 90%;
 }
 
 .maxHeight {
   height: 100%;
 }
 
-.titleBar {
-  height: 5%;
-}
-
 .container {
-  height: 100%
+  height: 100%;
 }
 
 .mainContainer {
   height: 100%;
-  display: flex;
-  justify-content: space-around;
+  width: 100%;
 }
 
 .sideMenu {
-  padding: 0 4em 0 0;
-  background-color:'rgba(0,0,0,.3)';
+  height: 10%;
+  padding: 2em 4em 0.5em 2em;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
 }

@@ -17,12 +17,16 @@
   "license": "MIT",
   "homepage": "https://github.com/alicoding/react-webpack-babel#readme",
   "dependencies": {
+    "esri-leaflet": "^2.0.7",
     "leaflet": "^1.0.2",
     "node-sass": "^4.3.0",
-    "react": "15.4.2",
+    "react": "^15.4.2",
     "react-dom": "15.4.2",
     "react-leaflet": "^1.1.0",
-    "sass-loader": "^4.0.2"
+    "react-websocket": "^1.1.6",
+    "sass-loader": "^4.0.2",
+    "socket.io": "^1.7.2",
+    "socket.io-react": "^1.1.2"
   },
   "devDependencies": {
     "babel-core": "6.21.0",
