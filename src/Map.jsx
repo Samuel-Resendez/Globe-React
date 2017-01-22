@@ -93,17 +93,17 @@ export default class MapComponent extends React.Component {
 		var pos = [0, 0]
 		console.log(zoom)
 		if (value == 1)
-			pos = [0, 20];
+			pos = [0, -20];
 		if (value == 2)
 			pos = [20, 0];
 		if (value == 3)
-			pos = [0, -20];
+			pos = [0, 20];
 		if (value == 4)
 			pos = [-20, 0];
 		if (zoom != -1)
 			this.setZoom(zoom);
-		this.state.map.panBy(pos)
-
+		console.log(pos)
+		this.state.map.panBy(pos);
 	}
 	pointToLayerMeteor(feature, latlng) {
 		let params = markerParams;
@@ -144,7 +144,7 @@ export default class MapComponent extends React.Component {
 		});
 		meteorLayer.addTo(this.state.map);
 		this.setState({meteorLayer: meteorLayer});
-    this.state.map.removeLayer(meteorLayer);
+		this.state.map.removeLayer(meteorLayer);
 	}
 	createStrikeLayer(geojson) {
 		let strikeLayer = L.geoJson(geojson, {
@@ -153,7 +153,7 @@ export default class MapComponent extends React.Component {
 		});
 		strikeLayer.addTo(this.state.map);
 		this.setState({strikeLayer: strikeLayer});
-    this.state.map.removeLayer(strikeLayer);
+		this.state.map.removeLayer(strikeLayer);
 	}
 	createCrashLayer(geojson) {
 		let crashLayer = L.geoJson(geojson, {
@@ -162,7 +162,7 @@ export default class MapComponent extends React.Component {
 		});
 		crashLayer.addTo(this.state.map);
 		this.setState({crashLayer: crashLayer});
-    this.state.map.removeLayer(crashLayer);
+		this.state.map.removeLayer(crashLayer);
 
 	}
 	createPoliceLayer(geojson) {
@@ -172,7 +172,7 @@ export default class MapComponent extends React.Component {
 		});
 		policeLayer.addTo(this.state.map);
 		this.setState({policeLayer: policeLayer});
-    this.state.map.removeLayer(policeLayer);
+		this.state.map.removeLayer(policeLayer);
 	}
 	zoomToLocation(pos) {
 		this.state.map.panTo(pos)

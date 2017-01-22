@@ -12,6 +12,7 @@ export default class App extends React.Component {
 		super(props)
 	}
 	handleData(data) {
+    if(data[0]!="h") {
 		data = JSON.parse(data)
     if(typeof data === "string")
       data = JSON.parse(data);
@@ -39,7 +40,10 @@ export default class App extends React.Component {
       console.log("No idea what to do with:")
       console.log(data)
     }
-	}
+	} else {
+    console.log(data);
+  }
+}
 
 	render() {
 		return (
