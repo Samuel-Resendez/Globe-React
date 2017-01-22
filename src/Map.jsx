@@ -44,7 +44,6 @@ export default class MapComponent extends React.Component {
 			this.createStrikeLayer(this.toGeo(data.data.features[1]));
 			this.createCrashLayer(this.toGeo(data.data.features[0]));
 			this.createPoliceLayer(this.toGeo(data.data.features[3]));
-      this.createValueLayer();
       let overlayMaps = {
 				"Meteor Strikes": this.state.meteorLayer,
 				"Plane Crashes": this.state.crashLayer,
@@ -169,12 +168,7 @@ export default class MapComponent extends React.Component {
 		this.setState({policeLayer: policeLayer});
 		this.state.map.removeLayer(policeLayer);
 	}
-	createValueLayer() {
-    var url = "http://server.arcgisonline.com/ArcGIS/rest/services/Demographics/USA_Median_Home_Value/MapServer";
-		let values = L.esri.imageMapLayer({url: url, opacity: 0.25 }).addTo(this.state.map);
-    console.log(values)
-    this.setState({values})
-	}
+
 	zoomToLocation(pos) {
 		this.state.map.panTo(pos)
 		this.state.map.invalidateSize();

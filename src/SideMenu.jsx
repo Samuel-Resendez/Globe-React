@@ -10,15 +10,11 @@ export default class SideMenu extends React.Component {
 	render() {
 		return (
 			<div className={styles.logoBox}>
-        <span className={styles.crest}>
-          <img src={usc}></img>
-        </span>
+
 				<span className={styles.globe}>
 					<img src={logo}></img>
 				</span>
-				<span className={styles.crest}>
-					<img src={usc}></img>
-				</span>
+	
 			</div>
 		)
 	}
