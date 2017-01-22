@@ -31,7 +31,8 @@ export default class MapComponent extends React.Component {
 			meteorLayer: null,
 			crashLayer: null,
 			strikeLayer: null,
-			policeLayer: null
+			policeLayer: null,
+			values: null
 		}
 	}
 	componentDidMount() {
@@ -43,11 +44,13 @@ export default class MapComponent extends React.Component {
 			this.createStrikeLayer(this.toGeo(data.data.features[1]));
 			this.createCrashLayer(this.toGeo(data.data.features[0]));
 			this.createPoliceLayer(this.toGeo(data.data.features[3]));
-			let overlayMaps = {
+      this.createValueLayer();
+      let overlayMaps = {
 				"Meteor Strikes": this.state.meteorLayer,
 				"Plane Crashes": this.state.crashLayer,
 				"Drone Strikes": this.state.strikeLayer,
 				"Police Killings": this.state.policeLayer
+				// "Home Values": this.state.values
 			}
 			let baseLayers = {
 				"Dark": this.state.darkGray,
@@ -128,15 +131,7 @@ export default class MapComponent extends React.Component {
 		const popupContent = `<p>${feature.properties.popupContent}</p>`;
 		layer.bindPopup(popupContent);
 	}
-	updateGeoJsonLayer(geojson) {
-		this.state.geojsonLayer.clearLayers();
-		// re-add the geojson so that it filters out subway lines which do not match state.filter
-		this.state.geojsonLayer.addData(geojson)
-		// fit the map to the new geojson layer's geographic extent
-		this.setState({geojson});
-		this.zoomToFeature(this.state.geojsonLayer);
-		this.state.map.invalidateSize();
-	}
+
 	createMetorLayer(geojson) {
 		let meteorLayer = L.geoJson(geojson, {
 			onEachFeature: this.onEachFeature,
@@ -173,6 +168,12 @@ export default class MapComponent extends React.Component {
 		policeLayer.addTo(this.state.map);
 		this.setState({policeLayer: policeLayer});
 		this.state.map.removeLayer(policeLayer);
+	}
+	createValueLayer() {
+    var url = "http://server.arcgisonline.com/ArcGIS/rest/services/Demographics/USA_Median_Home_Value/MapServer";
+		let values = L.esri.imageMapLayer({url: url, opacity: 0.25 }).addTo(this.state.map);
+    console.log(values)
+    this.setState({values})
 	}
 	zoomToLocation(pos) {
 		this.state.map.panTo(pos)
@@ -226,6 +227,7 @@ export default class MapComponent extends React.Component {
 		let darkGray = L.esri.basemapLayer('DarkGray').addTo(map);
 		let topographic = L.esri.basemapLayer('Topographic').addTo(map);
 		let streets = L.esri.basemapLayer('Streets').addTo(map);
+
 		this.setState({darkGray, topographic, streets});
 		this.setState({map});
 	}
